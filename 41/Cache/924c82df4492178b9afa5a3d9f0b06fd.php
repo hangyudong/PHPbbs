@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" prefix="og: http://ogp.me/ns#" class="han-init">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>博客-详情页</title>
+    <link rel="stylesheet" href="public/css/primer.css">
+    <link rel="stylesheet" href="public/css/user-content.min.css">
+    <link rel="stylesheet" href="public/css/octicons.css">
+    <link rel="stylesheet" href="public/css/collection.css">
+    <link rel="stylesheet" href="public/css/repo-card.css">
+    <link rel="stylesheet" href="public/css/repo-list.css">
+    <link rel="stylesheet" href="public/css/mini-repo-list.css">
+    <link rel="stylesheet" href="public/css/boxed-group.css">
+    <link rel="stylesheet" href="public/css/common.css">
+    <link rel="stylesheet" href="public/css/share.min.css">
+    <link rel="stylesheet" href="public/css/responsive.css">
+    <link rel="stylesheet" href="public/css/index.css">
+    <link rel="stylesheet" href="public/css/iconfont.css">
+    <link rel="stylesheet" href="public/css/prism.css"></script>
+	
+	<style>
+		.site-header {
+			padding-top: 20px;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+			background-color: #6CEEFE;
+			border-bottom: 1px solid #eee;
+			}
+			
+		.three-frist a{
+		
+		padding-left:17%;
+        
+		}
+	
+	</style>
+</head>
+<body class="">
+    <header class="site-header">
+        <div class="container">
+            <h1><a href="javascript:;"></a></h1>
+            <nav class="site-header-nav" role="navigation">
+                
+				<?php if(empty($_SESSION['uid'])): ?>
+					<a href="index.php?m=user&a=login">登陆</a>
+					<a href="index.php?m=article&a=person">博主介绍</a>
+				
+				<?php else : ?>
+				 
+					<a href="index.php?m=article&a=person">博主介绍</a>
+					<a href="index.php?m=article&a=add">发表博文</a>
+					<a href="index.php?m=manage&a=index">管理</a>
+					<a href="index.php?m=user&a=logout">退出</a>
+				<?php endif;?>
+              
+            </nav>
+        </div>
+    </header>
+	<section class="banner">
+    <div class="collection-head">
+        <div class="container">
+            <div class="collection-title">
+                <h1 class="collection-header">Fly's Blog</h1>
+                <div class="collection-info">
+                    <span class="meta-info">
+                        <span class="octicon octicon-location"></span>
+                        China Beijing
+                    </span>
+                    <span class="tooltipped tooltipped-s tooltipped-multiline meta-info" aria-label="PHP, JavaScript, HTML+CSS, C/C++">
+                        <span class="octicon octicon-code"></span>
+                        Web development
+                    </span>
+                    <span class="meta-info">
+                        <span class="octicon octicon-organization"></span>
+                        <a href="http://weibo.com/u/5353597552?refer_flag=1005050010_&is_all=1" target="_blank">Weibo.com</a>
+                    </span>
+                    <span class="meta-info last-updated">
+                        <span class="octicon octicon-mark-github"></span>
+                        <a href="https://github.com/kaiwenli" target="_blank">董航宇</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+	
+	
+	
+
+    <!-- / header -->
+	<?php foreach($data as $val) :?>
+	
+	
+	<div class="container">
+        <div class="columns">
+            
+                <div class="collection-title">
+                    <h1 class="collection-header"><a href="index.php?m=show&aid=<?=$val['aid'];?>"><?=$val['title'];?></a></h1>
+                    <div class="collection-info">
+                        <span class="meta-info">
+                            <span class="octicon octicon-calendar"></span> <?=date('Y-m-d H:i:s',$val['createtime']);?>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+	
+
+		<?php endforeach;?>
+	<div class="three-frist">
+	<a href = "<?=$page['first'];?>"> 首页</a>
+    <a href = "<?=$page['prev'];?>">上一页</a>
+	<a href = "<?=$page['next'];?>">下一页</a>
+	<a href = "<?=$page['end'];?>">尾页</a>	
+	</div>
+<div>
+
+
+ <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2015
+                    <span title="overtrue.me">overtrue.me</span>
+                    <a href="javascript:;"></a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:;"></a>
+                </li>
+            </ul>
+            <a href="https://github.com/overtrue/overtrue.github.io" target="_blank" aria-label="view source code">
+                <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links mobile-hidden">
+                
+                <li>
+                    <a href="javascript:;"></a>
+                </li>
+                
+                <li>
+                    <a href="javascript:;"></a>
+                </li>
+                
+                <li>
+                    <a href="javascript:;"></a>
+                </li>
+                
+                <li>
+                    <a href="javascript:;"></a>
+                </li>
+                
+                <li>
+                    <a href="javascript:;"></a>
+                </li>
+                
+                <li>
+                    <a href="javascript:;"></a>
+                </li>
+                
+            </ul>
+
+        </div>
+    </footer>
+
+</body>
+</html>
